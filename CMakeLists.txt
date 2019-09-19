@@ -20,7 +20,11 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
-add_executable(ros2_pub src/ros2_pub.cpp)
+include_directories(
+  include
+)
+
+add_executable(ros2_pub src/ros2_pub.cpp src/main.cpp)
 ament_target_dependencies(ros2_pub rclcpp std_msgs)
 
 install(TARGETS
